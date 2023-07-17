@@ -3,7 +3,7 @@ let score = 0;
 
 const questions = [
     {
-        question: "우주에서 제일많은 원소는?",
+        question: "우주에서 가장 많은 양을 차지하는 원소는?",
         choices: ["수소", "아르곤", "탄소", "철"],
         answer: "수소"
     },
