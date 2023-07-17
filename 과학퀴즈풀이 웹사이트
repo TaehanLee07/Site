@@ -16,54 +16,75 @@
 			filter: brightness(100%); /* 밝기 조정 */
         }
 
-h1 {
-    font-size: 52px;
-    color: #490b0b;
-}
+        h1 {
+            font-size: 52px;
+            color: #490b0b;
+            position: relative;
+            cursor: pointer;
+            margin-top: 50px; /* 텍스트를 위로 이동 */
+        }
 
-h2 {
-    font-size: 44px;
-    color: #b85959;
-}
+        h1::after {
+            content: attr(data-author);
+            position: absolute;
+            top: -35px;
+            right: -10px;
+            background-color: #ffd700;
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease-in-out;
+        }
 
-#totalScore {
-    font-size: 58px;
-    font-weight: bold;
-    color: #FF0000;
-}
+        h1:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
 
-#quiz {
-    font-size: 38px;
-    margin-bottom: 28px;
-    color: #00110d;
-}
+        #totalScore {
+            font-size: 58px;
+            font-weight: bold;
+            color: #FF0000;
+        }
 
-ul li {
-    font-size: 24px;
-    list-style-type: none;
-    margin-bottom: 18px;
-    color: #000808;
-}
+        #quiz {
+            font-size: 38px;
+            margin-bottom: 28px;
+            color: #8dc015;
+            margin-top: 20px; /* 텍스트를 위로 이동 */
+        }
 
-button {
-    font-size: 24px;
-    color: #FFFFFF;
-    background-color: #007BFF;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        ul li {
+            font-size: 32px;
+            list-style-type: none;
+            margin-bottom: 18px;
+            color: #ffa600;
+            text-align: center; /* 텍스트를 가운데로 정렬 */
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
-</style>
-<script src="d.js"></script>
+        button {
+            font-size: 24px;
+            color: #FFFFFF;
+            background-color: #007BFF;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="d.js"></script>
 </head>
 <body>
-    <h1>과학퀴즈 풀이 사이트</h1>
-    <h2>만든이: 이태한</h2>
+    <h1 data-author="만든이: 이태한">과학퀴즈 풀이 사이트</h1>
     <div id="quiz">
         <!-- 첫번째 문제 -->
     </div>
@@ -71,11 +92,9 @@ button:hover {
         <h2>최종 점수</h2>
         <p id="totalScore">0</p>
     </div>
-    
     <script src="quiz.js"></script>
     <script>
         renderQuestion();
     </script>
-    </body>
-    </html>
-    
+</body>
+</html>
