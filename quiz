@@ -79,11 +79,31 @@ function renderScore() {
     // 최종 점수 출력
     const scoreDiv = document.getElementById("score");
     scoreDiv.style.display = "block";
+
+    // Retry 버튼 생성
+    const retryButton = document.createElement("button");
+    retryButton.textContent = "Retry?";
+    retryButton.addEventListener("click", resetQuiz);
+    document.body.appendChild(retryButton);
 }
 
 function goBack() {
     currentQuestion--;
     renderQuestion();
+}
+
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    renderQuestion();
+
+    // 점수 숨기기
+    const scoreDiv = document.getElementById("score");
+    scoreDiv.style.display = "none";
+
+    // Retry 버튼 삭제
+    const retryButton = document.querySelector("button");
+    retryButton.remove();
 }
 
 function renderQuestion() {
