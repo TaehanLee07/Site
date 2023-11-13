@@ -1,11 +1,8 @@
+@charset "UTF-8";
+
 * {
     margin: 0;
     padding: 0;
-
-}
-
-img {
-    width: 1000px;
 }
 
 #main {
@@ -34,42 +31,52 @@ img {
 .menu a {
     padding: 15px 25px;
     text-decoration: none;
+    color: green;
 }
 
+a:hover {
+    background-color: #46f3ff;
+    color: black;
+    transition: all 0.5s;
+    color: rgb(255, 255, 255);
+}
 
 .info_title {
-    font: 15pt;
-    font-weight: bold;
-    line-height: 50px;
-    background-color: #AEAAAA;
     width: 900px;
     height: 50px;
-
-
+    margin: 0 25px;
+    background-color: #AEAAAA;
+    line-height: 50px;
+    font-size: 15pt;
+    font-weight: bold;
 }
 
 .info_title_detail {
-    font-size: 15pt;
-    font-weight: bold;
-    background-color: #E4E3E3;
     width: 800px;
     height: 50px;
+    margin: 0 25px;
+    background-color: #E4E3E3;
     line-height: 50px;
-
+    font-size: 15pt;
+    font-weight: bold;
 }
 
+.info_contents {
+    padding: 30px;
+    font-size: 14pt;
+}
 
-
-
-table {
-    padding: 10px;
-    width: 20%;
-    border: 1px solid #444444;
+.info_table {
+    border: black solid 1px;
     border-collapse: collapse;
 }
 
-th,
-td {
-    border: 1px solid #444444;
-    padding: 10px;
+.info_table tr td {
+    border: black solid 1px;
+    padding: 10px 30px;
+}
+
+.info_table tr th {
+    border: black solid 1px;
+    padding: 10px 30px;
 }
